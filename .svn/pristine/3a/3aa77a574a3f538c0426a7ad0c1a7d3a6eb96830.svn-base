@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            columnName = "APPLI_ID"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = idappli; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "APPLI_SHORT_NAME"; 
+            externalType = VARCHAR2; 
+            name = nomappli; 
+            valueClassName = NSString; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "APPLI_URL"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = urlappli; 
+            valueClassName = NSString; 
+            width = 300; 
+        }
+    ); 
+    attributesUsedForLocking = (idappli, urlappli, nomappli); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (idappli, urlappli, nomappli, "sp_MetServeurs"); 
+    externalName = "SAUT.APPLICATION"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (idappli, urlappli, nomappli, "sp_MetServeurs"); 
+        "_nameInObjectStore" = "SP_APPLI"; 
+    }; 
+    name = "sp_Appli"; 
+    primaryKeyAttributes = (idappli); 
+    relationships = (
+        {
+            destination = "sp_MetServeur"; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = idappli; sourceAttribute = idappli; }); 
+            name = "sp_MetServeurs"; 
+        }
+    ); 
+}

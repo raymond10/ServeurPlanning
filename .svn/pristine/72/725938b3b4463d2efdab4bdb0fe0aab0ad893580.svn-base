@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            columnName = "MET_KEY"; 
+            externalType = NUMBER; 
+            name = key; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CLI_TRAITEMENT"; 
+            externalType = NUMBER; 
+            name = traitement; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "VAR_KEY"; 
+            externalType = NUMBER; 
+            name = varAttendu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (key, varAttendu, traitement); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (key, varAttendu, traitement, "sp_Methode", "sp_TypeVar"); 
+    externalName = "SP_MET_CLIENT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (key, varAttendu, traitement, "sp_Methode", "sp_TypeVar"); 
+    }; 
+    name = "sp_MetClient"; 
+    primaryKeyAttributes = (key); 
+    relationships = (
+        {
+            destination = "sp_Methode"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = key; }); 
+            name = "sp_Methode"; 
+        }, 
+        {
+            destination = "sp_TypeVar"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = varKey; sourceAttribute = varAttendu; }); 
+            name = "sp_TypeVar"; 
+        }
+    ); 
+}

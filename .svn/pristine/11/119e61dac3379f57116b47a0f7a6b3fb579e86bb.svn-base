@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="con" path="WOFramework/ERExtensions"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="WOFramework/ServeurPlanningFwk"/>
+	<classpathentry kind="con" path="WOFramework/FwkCktlWebApp"/>
+	<classpathentry kind="con" path="WOFramework/Ajax"/>
+	<classpathentry kind="lib" path="Libraries/backport-util-concurrent-3.1.jar"/>
+	<classpathentry kind="lib" path="Libraries/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="Libraries/commons-httpclient.jar"/>
+	<classpathentry kind="lib" path="Libraries/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="Libraries/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="Libraries/ical4j-1.0.1.jar"/>
+	<classpathentry kind="lib" path="Libraries/jakarta-slide-webdavlib-2.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="Libraries/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/javassist-3.16.1-GA.jar"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/woinject-1.1.jar"/>
+	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
+	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>
+	<classpathentry kind="con" path="WOFramework/JavaWOExtensions"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
+	<classpathentry kind="con" path="WOFramework/JavaJDBCAdaptor"/>
+	<classpathentry kind="con" path="WOFramework/JavaXML"/>
+	<classpathentry kind="con" path="WOFramework/ERPrototypes"/>
+	<classpathentry kind="con" path="WOFramework/ERJars"/>
+	<classpathentry kind="lib" path="/Library/WebObjects/Extensions/cocktaildb-0.0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,7 @@
+ical4j.unfolding.relaxed=true
+ical4j.parsing.relaxed=true
+ical4j.validation.relaxed=true
+ical4j.compatibility.outlook=true
+ical4j.compatibility.notes=true
+net.fortuna.ical4j.timezone.date.floating=true
+;log4j.logger.net.fortuna.ical4j=debug, stdout

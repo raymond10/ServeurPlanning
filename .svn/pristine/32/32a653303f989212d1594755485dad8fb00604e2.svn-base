@@ -1,0 +1,49 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_Appli"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_Ical"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_MetClient"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_MetServeur"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_Methode"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_Param"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_Repartition"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_TypeTemps"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_TypeVar"; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = "sp_Individu"; 
+        }
+    ); 
+    internalInfo = {"_deletedEntityNamesInObjectStore" = ("sp_Ical"); }; 
+    userInfo = {modelId = PLANNING; }; 
+}

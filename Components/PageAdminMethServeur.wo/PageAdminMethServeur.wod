@@ -1,0 +1,42 @@
+Form1: WOForm {
+	name = "FormAdminMethServeur";
+}
+
+ServeurPlanningDefaultPage1: ServeurPlanningDefaultPage {
+}
+
+BrowserMethServeur: WOBrowser {
+	displayString = methServeurItem.uri;//VALID
+	item = methServeurItem;
+	list = dgMethServeur.displayedObjects;
+	selections = dgMethServeur.selectedObjects;
+	size = 10;
+	multiple = true;
+}
+
+BtnAssocier: WOSubmitButton {
+	action = associer;
+	value = "<==>";
+	class = "bouton";
+}
+
+BrowserApplication: WOBrowser {
+	displayString = applicationItem.nomappli;//VALID
+	item = applicationItem;
+	list = dgApplication.displayedObjects;
+	selections = dgApplication.selectedObjects;
+	size = 10;
+}
+
+RepMethServeurAffectee: WORepetition {
+	list = dgMethServeurAffectee.displayedObjects;
+	item = methServeurAffecteeItem;
+}
+
+StrMethServeurAffecteeMeth: WOString {
+	value = methServeurAffecteeItem.uri; //VALID
+}
+
+StrMethServeurAffecteeAppli: WOString {
+	value = methServeurAffecteeItem.sp_Appli.nomappli; //VALID
+}

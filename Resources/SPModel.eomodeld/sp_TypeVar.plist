@@ -1,0 +1,26 @@
+{
+    attributes = (
+        {
+            columnName = "VAR_KEY"; 
+            externalType = NUMBER; 
+            name = varKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "VAR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = varLib; 
+            valueClassName = NSString; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (varKey, varLib); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (varKey, varLib); 
+    externalName = "SP_TYPE_VARIABLE"; 
+    fetchSpecificationDictionary = {}; 
+    name = "sp_TypeVar"; 
+    primaryKeyAttributes = (varKey); 
+}

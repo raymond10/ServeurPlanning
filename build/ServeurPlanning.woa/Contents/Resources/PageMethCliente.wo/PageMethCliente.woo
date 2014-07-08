@@ -1,0 +1,50 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = NSMacOSRomanStringEncoding; 
+    variables = {
+        dgMethClient = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = session.defaultEditingContext; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = sp_MetClient; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                }; 
+            }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            localKeys = (); 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+            sortOrdering = (); 
+        }; 
+        dgRepartition = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = session.defaultEditingContext; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = sp_Repartition; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                    qualifier = {
+                        class = EOKeyValueQualifier; 
+                        key = metKeyClient; 
+                        selectorName = "isEqualTo:"; 
+                        value = {_key = metKeyClient; class = EOQualifierVariable; }; 
+                    }; 
+                }; 
+                fetchSpecificationName = RepartitionForMethKeyClient; 
+            }; 
+            formatForLikeQualifier = "%@*"; 
+            localKeys = (); 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+            sortOrdering = (); 
+        }; 
+    }; 
+}

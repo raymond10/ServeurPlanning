@@ -1,0 +1,9 @@
+cfBundleID=
+cfBundleShortVersion=
+cfBundleVersion=
+customInfoPListContent=
+eoAdaptorClassName=
+javaClient=false
+principalClass=fr.univlr.cri.planning.Application
+version=0.8.2.8
+project.ext.fwkVersion = '1.0.25+'

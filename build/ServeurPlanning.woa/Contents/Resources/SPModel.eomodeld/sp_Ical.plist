@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "ICAL_KEY"; 
+            externalType = NUMBER; 
+            name = key; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ICAL_LIEN"; 
+            externalType = VARCHAR2; 
+            name = lien; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ICAL_NAME"; 
+            externalType = VARCHAR2; 
+            name = name; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ICAL_TYPE"; 
+            externalType = VARCHAR2; 
+            name = type; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }
+    ); 
+    attributesUsedForLocking = (key); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (dCreation, dModification, lien, name, noIndividu, type); 
+    externalName = ICAL; 
+    fetchSpecificationDictionary = {}; 
+    name = "sp_Ical"; 
+    primaryKeyAttributes = (key); 
+}

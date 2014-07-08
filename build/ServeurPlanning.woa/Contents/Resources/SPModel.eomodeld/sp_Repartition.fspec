@@ -1,0 +1,26 @@
+{
+    RepartitionForMethKeyClient = {
+        class = EOFetchSpecification; 
+        entityName = "sp_Repartition"; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = metKeyClient; 
+            selectorName = isEqualTo; 
+            value = {"_key" = metKeyClient; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+    RepartitionForMethKeyServ = {
+        class = EOFetchSpecification; 
+        entityName = "sp_Repartition"; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = metKeyServ; 
+            selectorName = isEqualTo; 
+            value = {"_key" = metKeyServ; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

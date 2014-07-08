@@ -1,0 +1,74 @@
+ServeurPlanningDefaultPage1: ServeurPlanningDefaultPage {
+}
+
+Form1: WOForm {
+	name = "FormMethServeur";
+}
+
+BrowserApplication: WOBrowser {
+	displayString = itemApplication.nomappli;//VALID
+	item = itemApplication;
+	list = dgApplication.displayedObjects;
+	onClick = "this.form.submit();";
+	selections = selectedsApplication;
+	size = 15;
+}
+
+StrNomAppli: WOString {
+	value = selectedApplication.nomappli;//VALID
+}
+
+LnkUrlAppli: WOHyperlink {
+	href = selectedApplication.urlappli;//VALID
+	target = "_new";
+}
+
+StrUrlAppli: WOString {
+	value = selectedApplication.urlappli;//VALID
+}
+
+CondDgMethServeurHasObjects: WOConditional {
+	condition = dgMethServeur.displayedObjects.count;
+}
+
+BrowserMethServeur: WOBrowser {
+	displayString = itemMethServeur.uri;//VALID
+	item = itemMethServeur;
+	list = dgMethServeur.displayedObjects;
+	onClick = "this.form.submit();";
+	selections = selectedsMethServeur;
+}
+
+String5: WOString {
+	value = selectedMethServeur.sp_Methode.nom;//VALID
+}
+
+String6: WOString {
+	value = selectedMethServeur.sp_Methode.descrip;//VALID
+}
+
+String1: WOString {
+	value = selectedMethServeur.passage;//VALID
+}
+
+String4: WOString {
+	value = selectedMethServeur.sp_TypeVar.varLib;//VALID
+}
+
+CondHasMethServeur: WOConditional {
+	condition = selectedsMethServeur.count;
+}
+
+RepRepartition: WORepetition {
+	item = itemRepartition;
+	list = dgRepartition.displayedObjects;
+}
+
+StrMethClient: WOString {
+	value = itemRepartition.mc.sp_Methode.nom;//VALID
+}
+
+CondNotHasMethServeur: WOConditional {
+	condition = dgMethServeur.displayedObjects.count;
+	negate = true;
+}

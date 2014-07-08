@@ -1,0 +1,25 @@
+{
+    attributes = (
+        {
+            columnName = "IND_AGENDA"; 
+            externalType = VARCHAR2; 
+            name = indAgenda; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (indAgenda, noIndividu); 
+    externalName = "INDIVIDU_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    name = "sp_Individu"; 
+    primaryKeyAttributes = (noIndividu); 
+}

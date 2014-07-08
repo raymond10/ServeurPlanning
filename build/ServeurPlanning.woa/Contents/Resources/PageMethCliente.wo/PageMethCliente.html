@@ -1,0 +1,48 @@
+<webobject name = "ServeurPlanningDefaultPage1">
+  <webobject name = "Form1">
+    <table cellpadding = "0" cellspacing = "0" border = "0">
+      <tr>
+        <td valign = "TOP">
+          <table cellpadding = "0" cellspacing = "0" border = "0">
+            <tr>
+              <td> <webobject name = "Browser2" /> </td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td valign = "TOP">
+                <b>nom:</b>
+                &nbsp; 
+                <webobject name = "String5" />
+                <br />
+                <b>description:</b>
+                &nbsp; 
+                <webobject name = "String6" />
+                <br />
+                <b>traitement:</b>
+                &nbsp; 
+                <webobject name = "String1" />
+                &nbsp; 
+                <i>(traitement attendu pour planning: 0=aucun, 1=horaire+occ prior, 2=occ prior)</i>
+                <br />
+                <b>varAttendu:</b>
+                &nbsp; 
+                <webobject name = "String4" />
+              </td>
+            </tr>
+          </table>
+          <webobject name = "CondHasMethClient">
+            <hr />
+            Associ&eacute;e aux m&eacute;thodes serveur:&nbsp; 
+            <ul>
+              <webobject name = "RepRepartition">
+                <li>
+                  <webobject name = "StrMethClient" />
+                  - param&egrave;tre 
+                  <webobject name = "StrTypeParamLabel" />
+                </li>
+              </webobject>
+            </ul>
+          </webobject>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+</webobject>

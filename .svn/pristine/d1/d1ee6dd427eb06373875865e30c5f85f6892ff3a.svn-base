@@ -1,0 +1,12 @@
+CktlDefaultPage1: CktlDefaultPage {
+	headerLines = ^headerLines;
+	useToolTip = ^useToolTip;
+	pageTitle = "ServeurPlanning";
+	mailLabel = "Pour toute information<br>";
+}
+
+Menu1: Menu {
+}
+
+ComponentContent1: WOComponentContent {
+}

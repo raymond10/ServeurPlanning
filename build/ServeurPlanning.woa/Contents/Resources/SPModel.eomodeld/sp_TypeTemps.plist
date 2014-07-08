@@ -1,0 +1,38 @@
+{
+    attributes = (
+        {
+            columnName = "TEM_CODE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = CODE; }; 
+            name = code; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_DETAILS"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = LIBELLE; }; 
+            name = details; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_LIBELLE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = TYPE; }; 
+            name = type; 
+            valueClassName = NSString; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (code, details, type); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (code, details, type); 
+    externalName = "SP_TYPE_TEMPS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "SP_TYPETEMPS"; }; 
+    name = "sp_TypeTemps"; 
+    primaryKeyAttributes = (code); 
+}

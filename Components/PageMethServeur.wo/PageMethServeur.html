@@ -1,0 +1,46 @@
+<webobject name = "ServeurPlanningDefaultPage1">
+  <webobject name = "Form1">
+    <table cellpadding = "0" cellspacing = "0" border = "0">
+      <tr>
+        <td> <webobject name = "BrowserApplication" /> </td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td valign = "TOP">
+          <b>Nom de l'application:</b>&nbsp;<webobject name = "StrNomAppli" />
+          <br />
+          <b>URL de l'application:</b>&nbsp;<webobject name = "LnkUrlAppli"><webobject name = "StrUrlAppli" /></webobject>
+          <hr />
+          <webobject name = "CondDgMethServeurHasObjects">
+            <table cellpadding = "0" cellspacing = "0" border = "0">
+              <tr>
+                <td> <webobject name = "BrowserMethServeur" /> </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td valign = "TOP">
+                  <b>nom:</b>&nbsp; 
+                  <webobject name = "String5" />
+                  <br />
+                  <b>description:</b>&nbsp;<webobject name = "String6" />
+                  <br />
+                  <b>passage:</b>&nbsp; 
+                  <webobject name = "String1" />
+                  &nbsp;<i>(reception parametres : 1=par url, 2=par Content)</i>
+                  <br />
+                  <b>varRetour:</b>&nbsp;<webobject name = "String4" />
+                </td>
+              </tr>
+            </table>
+            <webobject name = "CondHasMethServeur">
+              <hr />
+              Utilis&eacute;e par:&nbsp; 
+              <ul>
+                <webobject name = "RepRepartition">
+                  <li> <webobject name = "StrMethClient" /> </li>
+                </webobject>
+              </ul>
+            </webobject>
+          </webobject>
+          <webobject name = "CondNotHasMethServeur"> Pas de m&eacute;thodes serveurs d&eacute;clar&eacute;es pour cette application. </webobject>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+</webobject>

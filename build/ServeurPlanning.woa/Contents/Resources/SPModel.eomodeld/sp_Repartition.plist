@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            columnName = "ID_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "KEY_CLIENT"; }; 
+            name = idKeyClient; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MET_KEY_CLIENT"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "URI_CLIENT"; }; 
+            name = metKeyClient; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MET_KEY_SERV"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "URI_SERV"; }; 
+            name = metKeyServ; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (idKeyClient, metKeyServ, metKeyClient); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (idKeyClient, metKeyClient, metKeyServ, ms, mc); 
+    externalName = "SP_REPARTITION"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (idKeyClient, metKeyClient, metKeyServ, ms, mc); 
+    }; 
+    name = "sp_Repartition"; 
+    primaryKeyAttributes = (metKeyServ, metKeyClient, idKeyClient); 
+    relationships = (
+        {
+            destination = "sp_MetClient"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = metKeyClient; }); 
+            name = mc; 
+        }, 
+        {
+            destination = "sp_MetServeur"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = metKeyServ; }); 
+            name = ms; 
+        }
+    ); 
+}

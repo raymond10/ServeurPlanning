@@ -1,0 +1,11 @@
+WebMenu: CktlMenu {
+	listener = listener;
+	itemSet = menuItemSet;
+	useTopMenu = true;
+	keepLastSelection = true;
+}
+
+StrTitle: WOString {
+	value = title;
+	escapeHTML = true;
+}

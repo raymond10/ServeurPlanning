@@ -1,0 +1,25 @@
+#Wed Apr 27 16:27:03 CEST 2011
+classes.dir=bin
+component.inlineBindingPrefix=[
+component.inlineBindingSuffix=]
+component.wellFormedTemplateRequired=false
+customInfoPListContent=
+embed.Local=true
+embed.Network=true
+embed.Project=true
+embed.System=true
+embed.User=true
+eoAdaptorClassName=
+javaVersion=1.5+
+principalClass=fr.univlr.cri.planning.Application
+project.name=ServeurPlanning
+project.name.lowercase=serveurplanning
+project.name.alias=planning
+project.type=application
+webXML=false
+webXML_CustomContent=
+#Indique la sphere de laquelle l'application depend
+org.cocktail.sphere=plan
+#nom complet de la classe contenant une méthode main affichant le n° de version de l'application dans la sortie standard.
+#org.cocktail.versionClass=fr.univlr.cri.planning.app.Version
+version.file=gradle.properties

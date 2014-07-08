@@ -1,0 +1,26 @@
+{
+    MetServeurAvecAppli = {
+        class = EOFetchSpecification; 
+        entityName = "sp_MetServeur"; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = idappli; 
+            selectorName = isNotEqualTo; 
+            value = "-1"; 
+        }; 
+    }; 
+    MetServeurForAppli = {
+        class = EOFetchSpecification; 
+        entityName = "sp_MetServeur"; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = "sp_Appli"; 
+            selectorName = isEqualTo; 
+            value = {"_key" = "sp_Appli"; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

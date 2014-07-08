@@ -1,0 +1,47 @@
+ServeurPlanningDefaultPage1: ServeurPlanningDefaultPage {
+}
+
+Form1: WOForm {
+	name = "FormMethClient";
+}
+
+Browser2: WOBrowser {
+	displayString = itemMethClient.sp_Methode.nom;//VALID
+	item = itemMethClient;
+	list = dgMethClient.displayedObjects;
+	onClick = "this.form.submit();";
+	selections = selectedsMethClient;
+}
+
+String5: WOString {
+	value = selectedMethClient.sp_Methode.nom;//VALID
+}
+
+String6: WOString {
+	value = selectedMethClient.sp_Methode.descrip;//VALID
+}
+
+String1: WOString {
+	value = selectedMethClient.traitement;//VALID
+}
+
+String4: WOString {
+	value = selectedMethClient.sp_TypeVar.varLib;//VALID
+}
+
+CondHasMethClient: WOConditional {
+	condition = selectedsMethClient.count;
+}
+
+RepRepartition: WORepetition {
+	item = itemRepartition;
+	list = dgRepartition.displayedObjects;
+}
+
+StrMethClient: WOString {
+	value = itemRepartition.ms.sp_Methode.nom;//VALID
+}
+
+StrTypeParamLabel: WOString {
+	value = typeParamLabel;
+}

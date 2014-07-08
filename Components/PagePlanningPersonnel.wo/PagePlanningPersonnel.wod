@@ -1,0 +1,121 @@
+ServeurPlanningDefaultPage1: CktlDefaultPage {
+}
+
+FormPlanningPersonnel: WOForm {
+	name = "FormPlanningPersonnel";
+	multipleSubmit = true;
+	action = doNothing;
+}
+
+StrUtilisateurConnecte: WOString {
+	value = utilisateurConnecte;
+}
+
+BtnDoNothing: WOSubmitButton {
+	action = doNothing;	
+	style="visibility:hidden;display:none";
+}
+
+RepDicoParamAllKeys: WORepetition {
+	list = catList;
+	item = catItem;
+}
+
+LnkUpSortCat: WOHyperlink {
+	action = upSortCat;
+	title = "Remonter cette categorie";
+	escapeHTML = true;
+}
+
+LnkDownSortCat: WOHyperlink {
+	action = downSortCat;
+	title = "Descendre cette categorie";
+	escapeHTML = false;
+}
+
+TFCatItem: WOTextField {
+	value = catTF;
+}
+
+RepMotList: WORepetition {
+	list = motList;
+	item = motItem;
+	index = motIndex;
+}
+
+TFMotItem: WOTextField {
+	value = motTF;
+}
+
+BtnAddMot: WOSubmitButton {
+	action = addMot;
+	value = "Autre mot-clef";
+	class = "bouton";
+	escapeHTML = false;
+}
+
+BtnAddCat: WOSubmitButton {
+	action = addCat;
+	value = "Nouvelle cat&eacute;gorie";
+	class = "bouton";
+	escapeHTML = false;
+}
+
+CktlNote1: CktlNote {
+}
+
+
+CktlDatePickerDebut: CktlDatePicker {
+	dateValue = dateDebut;
+}
+
+CktlDatePickerFin: CktlDatePicker {
+	dateValue = dateFin;
+}
+
+BtnDoCalcul: WOSubmitButton {
+	action = doCalcul;
+	value = "Calculer";
+	class = "bouton";
+}
+
+CondShowResult: WOConditional {
+	condition = dicoResult.allKeys.count;
+}
+
+RepDicoResultAllKeys: WORepetition {
+	list = catList;
+	item = keyItem;
+}
+
+StrKeyItem: WOString {
+	value = keyItem;
+}
+
+StrValueItem: WOString {
+	value = valueItem;
+}
+
+StrHeuresValueItem: WOString {
+	value = heuresValueItem;
+}
+
+StrPourcentageValueItem: WOString {
+	value = pourcentageValueItem;
+}
+
+StrMinutesTotal: WOString {
+	value = minutesTotal;
+	numberformat = "0";
+}
+
+StrHeuresTotal: WOString {
+	value = heuresTotal;
+}
+
+LnkExport: WOHyperlink {
+	href = ULRForm;
+	string = "Lien permanent vers ce tableau, rempli tel qu'il est";
+	title = "Copiez l'adresse pour reutilisation plus tard ...";
+	escapeHTML = "false";
+}

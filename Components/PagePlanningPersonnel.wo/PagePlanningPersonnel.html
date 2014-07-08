@@ -1,0 +1,131 @@
+<webobject name = "ServeurPlanningDefaultPage1">
+  <webobject name = "FormPlanningPersonnel">
+    <webobject name = "BtnDoNothing" />
+    <div align = "center">
+      <font class = "mainTitle"> Classification des occupations des EDT </font>
+      <br />
+      <webobject name = "StrUtilisateurConnecte" />
+      <br />
+      <br />
+      <table>
+        <tr>
+          <td valign = "top">
+            <table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0">
+              <tr>
+                <td>
+                  <table border = "0" cellpadding = "2" cellspacing = "1">
+                    <tr class = "listboxHeader">
+                      <th>Cat&eacute;gorie (1)</th>
+                      <th>Mots-clefs associ&eacute;s (2)</th>
+                    </tr>
+                    <webobject name = "RepDicoParamAllKeys">
+                      <tr class = "listboxLine">
+                        <td valign = "top">
+                          <webobject name = "LnkUpSortCat">&lt;</webobject>
+                          <webobject name = "LnkDownSortCat">&gt;</webobject>
+                          <webobject name = "TFCatItem" />
+                        </td>
+                        <td valign = "top">
+                          <ul>
+                            <webobject name = "RepMotList">
+                              <li><webobject name = "TFMotItem" /></li>
+                            </webobject>
+                            <li><webobject name = "BtnAddMot" /></li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </webobject>
+                    <tr class = "listboxLine">
+                      <td colspan = "2" align = "center"><webobject name = "BtnAddCat" /></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>&nbsp;&nbsp;</td>
+          <td valign = "top" width = "300px">
+            <webobject name = "CktlNote1">
+              <div align = "center">
+                <font class = "title">Informations</font>
+              </div>
+              <ol>
+                <li>
+                  <font class = "textNote">L'ordre des catégories a de l'importance : une "occupation" 
+                    sera classifié d'abord dans les catégories du haut.</font>
+                </li>
+                <li>
+                  <font class = "textNote">La casse n'a pas d'importance.</font>
+                </li>
+              </ol>
+              <ul>
+                <li>
+                  <font class = "textNote">Appuyez sur 
+                    <b>[ENTREE]</b>
+                    entre chaque saisie / modification / suppression
+                    de catégorie ou mot-clef.</font>
+                </li>
+                <li>
+                  <font class = "textNote">Les &quot;occupations&quot; n'appartiennent qu'&agrave; 
+                    <b>une seule</b>
+                    cat&eacute;gorie.</font>
+                </li>
+              </ul>
+            </webobject>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <table style = "border:1px dotted gray; background-color: #DDF8DD">
+        <tr>
+          <td>
+            <font class = "title"><webobject name = "LnkExport" /></font>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <font class = "textEntry">D&eacute;but : </font>
+      <webobject name = "CktlDatePickerDebut" />
+      - 
+      <font class = "textEntry">Fin : </font>
+      <webobject name = "CktlDatePickerFin" />
+      <webobject name = "BtnDoCalcul" />
+      <webobject name = "CondShowResult">
+        <hr />
+        <table class = "listboxBorder" border = "0" cellpadding = "1" cellspacing = "0">
+          <tr>
+            <td>
+              <table border = "0" cellpadding = "2" cellspacing = "1">
+                <tr class = "listboxHeader">
+                  <th>Categorie</th>
+                  <th>Minutes</th>
+                  <th>Heures</th>
+                  <th>%</th>
+                </tr>
+                <webobject name = "RepDicoResultAllKeys">
+                  <tr class = "listboxLine">
+                    <td><webobject name = "StrKeyItem" /></td>
+                    <td><webobject name = "StrValueItem" /></td>
+                    <td><webobject name = "StrHeuresValueItem" /></td>
+                    <td><webobject name = "StrPourcentageValueItem" /></td>
+                  </tr>
+                </webobject>
+                <tr class = "listboxLine">
+                  <td colspan = "4"><hr /></td>
+                </tr>
+                <tr class = "listboxLine">
+                  <td>
+                    <b>totaux</b>
+                  </td>
+                  <td><webobject name = "StrMinutesTotal" /></td>
+                  <td><webobject name = "StrHeuresTotal" /></td>
+                  <td></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </webobject>
+    </div>
+  </webobject>
+</webobject>

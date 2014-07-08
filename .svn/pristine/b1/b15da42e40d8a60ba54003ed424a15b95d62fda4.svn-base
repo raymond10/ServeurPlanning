@@ -1,0 +1,14 @@
+{
+    FiltreAppliHttp = {
+        class = EOFetchSpecification; 
+        entityName = "sp_Appli"; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = urlappli; 
+            selectorName = isLike; 
+            value = "http*"; 
+        }; 
+    }; 
+}

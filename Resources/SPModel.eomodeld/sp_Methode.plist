@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "MET_DESCRIPTION"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = DESCRIPTION; }; 
+            name = descrip; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "MET_KEY"; 
+            externalType = NUMBER; 
+            name = key; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MET_NOM"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = URI; }; 
+            name = nom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MET_BOOL_SERVEUR"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = SERVEUR; }; 
+            name = serveur; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (nom, descrip, serveur, key); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (nom, descrip, serveur, key); 
+    externalName = "SP_METHODE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (nom, descrip, serveur, key); }; 
+    name = "sp_Methode"; 
+    primaryKeyAttributes = (key); 
+    relationships = (
+        {
+            destination = "sp_MetClient"; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = key; }); 
+            name = "sp_MetClients"; 
+        }, 
+        {
+            destination = "sp_MetServeur"; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = key; }); 
+            name = "sp_MetServeurs"; 
+        }
+    ); 
+}

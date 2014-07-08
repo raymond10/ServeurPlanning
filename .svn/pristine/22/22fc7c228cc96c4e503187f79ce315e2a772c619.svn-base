@@ -1,0 +1,101 @@
+### ==================================================== ###
+###   Les parametres de configuration de l'application   ###
+###                Serveur de Planning                   ###
+###               WebObjects 5, Web/HTML                 ###
+### ==================================================== ###
+
+# L'identifiant de l'application. Il peut etre utilise par differents
+# services : authentification (SAUT), sauvegarde des documents
+# (GEDFS),... Le ID ne doit pas depasse 10 symboles et il doit etre
+# enregistre aupres de serveur concerne.
+# Il n'est pas conseille de modifier cette valeur.
+APP_ID=SRVPLANF
+
+# Description courte de l'application. Le meme ID pouvant etre partage
+# entre plusieurs versions de l'application, cette valeur permet
+# de fournir les informations complementaires
+APP_ALIAS=ServeurPlanning
+
+#* adresse email de l'administrateur (apparait en bas dans l'interface
+#* HTML de l'application.
+APP_ADMIN_MAIL=raymond.naneon@utt.fr
+
+#* L'adresse de l'image "Logo" de l'etablissement
+MAIN_LOGO_URL=https://agecanonix-form.utt.fr/WebObjects/Images/logoUTTgaucheLittle.png
+
+# Le URL de service d'authentification. Il permet de recuperer
+# le dictionnaire de connexion a la base de donnees. Si le service
+# SAUT/ServAut n'est pas disponible dans votre systeme, mettez ce
+# parametre en commentaire et renseigner le dictionnaire de connexion
+# directement dans le fichier index.eomodeld
+SAUT_URL=https://agecanonix-form.utt.fr/cgi-bin/WebObjects/ServAut.woa/wa/
+
+#* Le mot de passe de connexion a l'interface HTML de l'application.
+#* Le mot de passe donnee ici DOIT ETRE CRYPTE !
+#* Vous pouvez utiliser la commande "crypt" sous les systemes unix.
+APP_ADMIN_PASSWORD=W.A6cU1CtecfE
+
+# Le dictionnaire de translation des identifiants des dictionnaires
+# de connexion a la base de donnees. Voir la configuration de
+# serveur SAUT/ServAut, s'il est disponible.
+# Si SAUT_URL n'est pas renseigne, alors cette valeur est ignoree.
+SAUT_ID_TRANSLATION=PLANNING:GRHUM,GRHUM:GRHUM
+
+# -------------------------------------------------------------------------------------------------- #
+# ------------------------------- PARAMETRES SPECIFIQUES A PLANNING -------------------------------- #
+# -------------------------------------------------------------------------------------------------- #
+
+# Pour la connection entre plusieurs serveurs de Planning,
+# cet identifiant de l'Université sera employé
+UNIV_ID=UTT
+
+# URL de l'application ServeurPlanning.
+GRHUM_PLANNING_URL=https://agecanonix-form.utt.fr/cgi-bin/WebObjects/ServeurPlanning.woa/wa/
+
+# ** DEBUG / LOGS :**
+# 0 : pas de logs
+# 1 : logs mimimuns
+# 2 : logs complets
+# 3 : logs complets + logs SQL
+DEBUG_LEVEL=3
+
+# Interrogation du serveur de planning pour recuperer un flux ics
+# Determiner la fenetre temporelle d'interrogation
+#
+# Nombre de semaine avant la date de jour
+ICALENDAR_WEEKS_BEFORE=26
+# Nombre de semaine apres la date de jour
+ICALENDAR_WEEKS_AFTER=27
+
+# Temps entre 2 envois de heartbeat aux applications serveur (en secondes)
+HEARTBEAT_SEND_DELAY=300
+
+# *********************************************************
+# Les parametres de durees relatifs aux actions du serveur
+# *********************************************************
+
+# duree de vie d'une demande de planning vers les methodes serveur
+# mettre 0 pour re-interroger les sources systematiquement
+TTL_PLANNING_READ=0
+
+# duree de vie d'un fichier ICS genere par le serveur (secondes)
+# mettre 0 pour re-interroger les sources systematiquement
+TTL_ICALENDAR_WRITE=300
+
+# duree de vie d'un fichier ICS charge depuis la source (secondes)
+# la nature de la source est un fichier ics sur le webdav
+# mettre 0 pour relire systematiquement
+TTL_ICALENDAR_READ=60
+
+# Le temps au bout duquel on estime qu'un application distante
+# est trop lente. A noter que les application WO HTML ont un
+# timeout par defaut de 30s.
+# La duree indiquee est en secondes.
+MAX_REMOTE_APP_RESPONSE_TIME=60
+
+# Le schéma de nommage des occupations issues de fichiers ICS
+# L'affichage sera : motif de l'occupation + le schéma de nommage
+# entre crochets (si non vide)
+#* Valeurs autorisees : chaine_statique/${domaine}/${fichier}/${X-WR-CALNAME}
+#* La valeur par defaut est ${fichier}
+ICS_SUFFIX_PATTERN=${X-WR-CALNAME}

@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            columnName = "MET_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = metKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PAR_NOM"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = nom; 
+            valueClassName = NSString; 
+            width = 20; 
+        }, 
+        {
+            columnName = "PAR_PLACE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = place; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (metKey, place, nom); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (metKey, place, nom, methode); 
+    externalName = "SP_PARAM"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (metKey, place, nom, methode); }; 
+    name = "sp_Param"; 
+    primaryKeyAttributes = (metKey, place); 
+    relationships = (
+        {
+            destination = "sp_MetServeur"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = metKey; }); 
+            name = methode; 
+        }
+    ); 
+}

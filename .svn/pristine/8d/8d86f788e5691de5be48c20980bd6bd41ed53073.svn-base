@@ -1,0 +1,102 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "APPLI_ID"; 
+            externalType = VARCHAR2; 
+            name = idappli; 
+            valueClassName = NSString; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MET_KEY"; 
+            externalType = NUMBER; 
+            name = key; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SER_PARAM_PASSAGE"; 
+            externalType = NUMBER; 
+            name = passage; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SER_URI"; 
+            externalType = VARCHAR2; 
+            name = uri; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "VAR_KEY"; 
+            externalType = NUMBER; 
+            name = varRetour; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (key, uri, idappli, varRetour, passage); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (
+        key, 
+        uri, 
+        idappli, 
+        varRetour, 
+        "sp_Methode", 
+        "sp_TypeVar", 
+        "sp_Appli", 
+        "sp_Params", 
+        passage
+    ); 
+    externalName = "SP_MET_SERVEUR"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            key, 
+            uri, 
+            idappli, 
+            varRetour, 
+            "sp_Methode", 
+            "sp_TypeVar", 
+            "sp_Appli", 
+            "sp_Params", 
+            passage
+        ); 
+    }; 
+    name = "sp_MetServeur"; 
+    primaryKeyAttributes = (key); 
+    relationships = (
+        {
+            destination = "sp_Appli"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = idappli; sourceAttribute = idappli; }); 
+            name = "sp_Appli"; 
+        }, 
+        {
+            destination = "sp_Methode"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = key; }); 
+            name = "sp_Methode"; 
+        }, 
+        {
+            destination = "sp_Param"; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = metKey; sourceAttribute = key; }); 
+            name = "sp_Params"; 
+        }, 
+        {
+            destination = "sp_TypeVar"; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = varKey; sourceAttribute = varRetour; }); 
+            name = "sp_TypeVar"; 
+        }
+    ); 
+}

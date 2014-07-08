@@ -1,0 +1,74 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = NSUTF8StringEncoding; 
+    variables = {
+        dgMethServeur = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = "sp_MetServeur"; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                    qualifier = {
+                        class = EOKeyValueQualifier; 
+                        key = "sp_Appli"; 
+                        selectorName = "isEqualTo:"; 
+                        value = {"_key" = "sp_Appli"; class = EOQualifierVariable; }; 
+                    }; 
+                }; 
+                fetchSpecificationName = MetServeurForAppli; 
+            }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            localKeys = (); 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+            sortOrdering = (); 
+        }; 
+        dgApplication = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = "sp_Appli"; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                }; 
+                fetchSpecificationName = FiltreAppliHttp; 
+             }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            localKeys = (); 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+            sortOrdering = (
+                {class = EOSortOrdering; key = nomappli; selectorName = "compareAscending:"; }
+            ); 
+        }; 
+        dgMethServeurAffectee = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = "sp_MetServeur"; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                }; 
+                fetchSpecificationName = MetServeurAvecAppli; 
+            }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            localKeys = (); 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+            sortOrdering = (); 
+        }; 
+    }; 
+}

@@ -1,0 +1,262 @@
+/*
+ * Copyright Université de La Rochelle 2008
+ *
+ * Ce logiciel est un programme informatique permettant la communication 
+ * entre applications de gestion de plannings.
+ * 
+ * Ce logiciel est régi par la licence CeCILL soumise au droit franéais et
+ * respectant les principes de diffusion des logiciels libres. Vous pouvez
+ * utiliser, modifier et/ou redistribuer ce programme sous les conditions
+ * de la licence CeCILL telle que diffusée par le CEA, le CNRS et l'INRIA 
+ * sur le site "http://www.cecill.info".
+
+ * En contrepartie de l'accessibilité au code source et des droits de copie,
+ * de modification et de redistribution accordés par cette licence, il n'est
+ * offert aux utilisateurs qu'une garantie limitée.  Pour les mémes raisons,
+ * seule une responsabilité restreinte pése sur l'auteur du programme,  le
+ * titulaire des droits patrimoniaux et les concédants successifs.
+
+ * A cet égard  l'attention de l'utilisateur est attirée sur les risques
+ * associés au chargement,  é l'utilisation,  é la modification et/ou au
+ * développement et é la reproduction du logiciel par l'utilisateur étant 
+ * donné sa spécificité de logiciel libre, qui peut le rendre complexe é 
+ * manipuler et qui le réserve donc é des développeurs et des professionnels
+ * avertis possédant  des  connaissances  informatiques approfondies.  Les
+ * utilisateurs sont donc invités é charger  et  tester  l'adéquation  du
+ * logiciel é leurs besoins dans des conditions permettant d'assurer la
+ * sécurité de leurs systémes et ou de leurs données et, plus généralement, 
+ * é l'utiliser et l'exploiter dans les mémes conditions de sécurité. 
+
+ * Le fait que vous puissiez accéder é cet en-téte signifie que vous avez 
+ * pris connaissance de la licence CeCILL, et que vous en avez accepté les
+ * termes.
+ */
+package fr.univlr.cri.planning.app;
+
+import java.util.StringTokenizer;
+
+import org.cocktail.fwkcktlwebapp.common.version.app.VersionApp;
+import org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion;
+
+import fr.univlr.cri.planning.Application;
+
+/**
+ * Classe descriptive de la version et dependances de l'application
+ * ServeurPlanning
+ * 
+ * @author ctarade
+ */
+public class Version extends A_CktlVersion {
+
+	// nom de l'application
+	public String name() {
+		return "ServeurPlanning";
+	}
+
+	public static final int VERSIONNUMMAJ;
+	public static final int VERSIONNUMMIN;
+	public static final int VERSIONNUMPATCH;
+	public static final int VERSIONNUMBUILD;
+	public static final String VERSIONDATE;
+
+	static {
+		VersionApp versionApp = Application.application().injector().getInstance(VersionApp.class);
+		VERSIONNUMMAJ = versionApp.majVersion();
+		VERSIONNUMMIN = versionApp.minVersion();
+		VERSIONNUMPATCH = versionApp.patchVersion();
+		VERSIONNUMBUILD = versionApp.buildVersion();
+		VERSIONDATE = versionApp.dateVersion();
+	}
+
+	/* (non-Javadoc)
+	 * @see org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion#versionNumMaj()
+	 */
+	@Override
+	public int versionNumMaj() {
+		// TODO Auto-generated method stub
+		return VERSIONNUMMAJ;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion#versionNumMin()
+	 */
+	@Override
+	public int versionNumMin() {
+		// TODO Auto-generated method stub
+		return VERSIONNUMMIN;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion#versionNumPatch()
+	 */
+	@Override
+	public int versionNumPatch() {
+		// TODO Auto-generated method stub
+		return VERSIONNUMPATCH;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion#versionNumBuild()
+	 */
+	@Override
+	public int versionNumBuild() {
+		// TODO Auto-generated method stub
+		return VERSIONNUMBUILD;
+	}
+
+    // commentaire
+	public String comment() {
+		return "";
+	}
+
+	// liste des dependances
+	public CktlVersionRequirements[] dependencies() {
+		return new CktlVersionRequirements[] {
+				new CktlVersionRequirements(new VersionJakartaSlideWebdavlib(), "2", "2", false),
+				new CktlVersionRequirements(new VersionIcal4j(), null, null, false),
+				new CktlVersionRequirements(new VersionCommonHttpClient(), "2", "2", false),
+				new CktlVersionRequirements(new VersionCommonLogging(), "1", "1", false),
+				new CktlVersionRequirements(new org.cocktail.fwkcktlwebapp.server.version.Version(), "4.0.15", null, true),
+				new CktlVersionRequirements(new org.cocktail.fwkcktlwebapp.server.version.CktlVersionWebObjects(), "5.4.3", null, false),
+				new CktlVersionRequirements(new org.cocktail.fwkcktlwebapp.server.version.CktlVersionJava(), "1.4.2", "1.6", false) };
+	}
+
+	/**
+	 * Classe de lecture de la version de jakarta-slide-webdavlib
+	 * 
+	 * @author Cyril Tarade <cyril.tarade at univ-lr.fr>
+	 */
+	private class VersionJakartaSlideWebdavlib extends CktlVersionJar {
+
+		private static final String WEBDAV_CLASS_NAME = "org.apache.webdav.lib.WebdavResource";
+
+		public VersionJakartaSlideWebdavlib() {
+			super(WEBDAV_CLASS_NAME);
+		}
+	}
+
+	/**
+	 * Classe de lecture de la version de ical4j
+	 * 
+	 * @author Cyril Tarade <cyril.tarade at univ-lr.fr>
+	 */
+	private class VersionIcal4j extends CktlVersionJar {
+
+		private static final String ICAL4J_CLASS_NAME = "net.fortuna.ical4j.model.property.Version";
+
+		public VersionIcal4j() {
+			super(ICAL4J_CLASS_NAME);
+		}
+	}
+
+	/**
+	 * Classe de lecture de la version de common http client
+	 * 
+	 * @author Cyril Tarade <cyril.tarade at univ-lr.fr>
+	 */
+	private class VersionCommonHttpClient extends CktlVersionJar {
+
+		private static final String COMMON_HTTP_CLIENT_CLASS_NAME = "org.apache.commons.httpclient.HttpClient";
+
+		public VersionCommonHttpClient() {
+			super(COMMON_HTTP_CLIENT_CLASS_NAME);
+		}
+	}
+
+	/**
+	 * Classe de lecture de la version de common logging
+	 * 
+	 * @author Cyril Tarade <cyril.tarade at univ-lr.fr>
+	 */
+	private class VersionCommonLogging extends CktlVersionJar {
+
+		private static final String COMMON_LOGGING_CLASS_NAME = "org.apache.commons.logging.Log";
+
+		public VersionCommonLogging() {
+			super(COMMON_LOGGING_CLASS_NAME);
+		}
+	}
+
+	/**
+	 * Classe a reintegrer dans CRIWebApp, afin qu'il soit possible d'utiliser
+	 * plusieurs fois la classe (virer les static), et lire les formats de version
+	 * en 0-rc3
+	 * 
+	 * @author ctarade
+	 */
+	private abstract class CktlVersionJar extends A_CktlVersion {
+
+		private String fqdnClassName;
+
+		public CktlVersionJar(String aFqdnClassName) {
+			super();
+			fqdnClassName = aFqdnClassName;
+			try {
+				localReadVersionNumber();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		public CktlVersionRequirements[] dependencies() {
+			return null;
+		}
+
+		public String name() {
+			return "Jar \"" + fqdnClassName + "\"";
+		}
+
+		public int versionNumMaj() {
+			return versionNumMaj;
+		}
+
+		public int versionNumMin() {
+			return versionNumMin;
+		}
+
+		public int versionNumPatch() {
+			return versionNumPatch;
+		}
+
+		public int versionNumBuild() {
+			return versionNumBuild;
+		}
+
+		private int versionNumMaj;
+		private int versionNumMin;
+		private int versionNumPatch;
+		private int versionNumBuild;
+
+		// la lecture reelle des parametres, qui a que fqdnClassName soit renseignee
+		private void localReadVersionNumber() throws ClassNotFoundException {
+			final Package jarPackage = Class.forName(fqdnClassName).getPackage();
+			final String jarVersion = jarPackage.getImplementationVersion();
+			if (jarVersion != null) {
+				StringTokenizer tk = new StringTokenizer(jarVersion, "._-rc");
+				if (tk.hasMoreTokens()) {
+					versionNumMaj = Integer.parseInt(tk.nextToken());
+				}
+				if (tk.hasMoreTokens()) {
+					versionNumMin = Integer.parseInt(tk.nextToken());
+				}
+				if (tk.hasMoreTokens()) {
+					versionNumPatch = Integer.parseInt(tk.nextToken());
+				}
+				if (tk.hasMoreTokens()) {
+					versionNumBuild = Integer.parseInt(tk.nextToken());
+				}
+			}
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see
+		 * org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion#readVersionNumber
+		 * ()
+		 */
+		public void readVersionNumber() throws Exception {
+
+		}
+	}
+}
